@@ -31,6 +31,7 @@ body {
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid #ffff00;
+    width: 300px;
 }
 
 #count-guest {
@@ -86,23 +87,51 @@ button {
     font-family: 'Cursed Timer ULiL';
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-around;
-    gap: 35%;
+    gap: 8%
 }
 
 .item-a {
-    justify-content: flex-start;
+    justify-content: left;
 
 }
 
 .item-b {
-    justify-content: flex-end;
+    justify-content: right;
+}
+
+.item-period{
+    justify-content: center;
 }
 
 .item-c {
     display: flex;
     justify-content: center;
+}
+
+#period-1{
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid #ffff00;
+}
+
+#period-2{
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid #ffff00;
+}
+
+#period-3{
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid #ffff00;
+}
+
+#period-4{
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid #ffff00;
 }
 
 #restart-button {
@@ -111,4 +140,5 @@ button {
     height: 45px;
     font-weight: bold;
     font-family: 'Verdana';
+    margin-top: 3%;
 }
