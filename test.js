@@ -4,16 +4,18 @@ let time = 60
 let bordeHomBool = false
 let bodeGuestBool = false
 let periodCounter = 1
+let anime = false
 
 
 let homCount = document.getElementById("count-hom")
 let guestCount = document.getElementById("count-guest")
 let timeString = document.getElementById("timer")
-
+let fondo = document.getElementById("fondo")
 let firstPeriodButton = document.getElementById("period-1")
 let secondPeriodButton = document.getElementById("period-2")
 let thirdPeriodButton = document.getElementById("period-3")
 let fourthPeriodButton = document.getElementById("period-4")
+let ayayaButton = document.getElementById("ayaya-button")
 
 timeString.textContent = time
 
@@ -80,7 +82,7 @@ function restart() {
 
 function timerPeriod(duration, display) {
     let timer = duration, minutes, seconds;
-    setInterval(function(){
+    setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -89,20 +91,20 @@ function timerPeriod(duration, display) {
 
         display.textContent = minutes + ":" + seconds;
 
-        if(--timer < 0){
-            timer = duration;   
+        if (--timer < 0) {
+            timer = duration;
         }
-        if(minutes + ":" + seconds == "00:00"){
+        if (minutes + ":" + seconds == "00:00") {
             periodCounter += 1
         }
 
-        if(periodCounter > 4){
+        if (periodCounter > 4) {
             display.textContent = "END"
         }
     }, 10);
 }
 
-window.onload = function(){
+window.onload = function () {
     var twelveMinutes = 60 * 12,
         display = document.querySelector('#timer');
     timerPeriod(twelveMinutes, display);
@@ -167,13 +169,25 @@ function highlightPeriod4() {
     fourthPeriodButton.style.borderColor = '#ffff00'
 }
 
-function highlightEndMatch(){
+function highlightEndMatch() {
     firstPeriodButton.style.borderColor = '#9AABD8'
     secondPeriodButton.style.borderColor = '#9AABD8'
     thirdPeriodButton.style.borderColor = '#9AABD8'
     fourthPeriodButton.style.borderColor = '#9AABD8'
 }
 
+function ayaya() {
+    if (anime == false) {
+        fondo.style.backgroundImage = 'url("SlamDunk.jpg")';
+        ayayaButton.textContent = "Normie";
+        anime = true;
+    } else if (anime == true) {
+        fondo.style.backgroundImage = "none"
+        fondo.style.backgroundColor = "#1B244A";
+        ayayaButton.textContent = "AYAYA";
+        anime = false
+    }
+}
 
 let highlightPeriod = setInterval(function intervalPeriod() {
     if (periodCounter == 1) {
@@ -182,9 +196,9 @@ let highlightPeriod = setInterval(function intervalPeriod() {
         highlightPeriod2()
     } else if (periodCounter == 3) {
         highlightPeriod3()
-    } else if (periodCounter == 4){
+    } else if (periodCounter == 4) {
         highlightPeriod4()
-    } else{
+    } else {
         highlightEndMatch()
     }
 }, 100)

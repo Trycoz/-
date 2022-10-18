@@ -101,7 +101,7 @@ button {
     justify-content: right;
 }
 
-.item-period{
+.item-period {
     justify-content: center;
 }
 
@@ -110,25 +110,25 @@ button {
     justify-content: center;
 }
 
-#period-1{
+#period-1 {
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid #ffff00;
 }
 
-#period-2{
+#period-2 {
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid #ffff00;
 }
 
-#period-3{
+#period-3 {
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid #ffff00;
 }
 
-#period-4{
+#period-4 {
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid #ffff00;
@@ -141,4 +141,12 @@ button {
     font-weight: bold;
     font-family: 'Verdana';
     margin-top: 3%;
+}
+
+#ayaya-button {
+    font-size: large;
+    width: 90px;
+    height: 45px;
+    font-weight: bold;
+    font-family: 'Verdana';
 }
