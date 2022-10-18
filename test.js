@@ -5,6 +5,7 @@ let bordeHomBool = false
 let bodeGuestBool = false
 let periodCounter = 1
 let anime = false
+let timer;
 
 
 let homCount = document.getElementById("count-hom")
@@ -65,8 +66,8 @@ function restart() {
     time = "12:00"
     timeString.textContent = time
     periodCounter = 1
-    clearInterval(inter)
-    timerPeriod(twelveMinutes, display)
+    timer = 60 * 12;
+    
 
 }
 
@@ -86,7 +87,8 @@ function restart() {
 //Función timer con minutos y segundos
 
 function timerPeriod(duration, display) {
-    let timer = duration, minutes, seconds;
+    timer = duration;
+    var minutes, seconds
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
