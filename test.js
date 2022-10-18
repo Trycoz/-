@@ -1,6 +1,6 @@
 let homScore = 0
 let guestScore = 0
-let time = 60
+let time = "12:00"
 let bordeHomBool = false
 let bodeGuestBool = false
 let periodCounter = 1
@@ -16,6 +16,8 @@ let secondPeriodButton = document.getElementById("period-2")
 let thirdPeriodButton = document.getElementById("period-3")
 let fourthPeriodButton = document.getElementById("period-4")
 let ayayaButton = document.getElementById("ayaya-button")
+let musica = new Audio("SlamDunkAudio.mp3")
+musica.loop = "true"
 
 timeString.textContent = time
 
@@ -60,9 +62,12 @@ function restart() {
     guestScore = 0
     homCount.textContent = homScore
     guestCount.textContent = guestScore
-    time = 60
+    time = "12:00"
     timeString.textContent = time
     periodCounter = 1
+    clearInterval(inter)
+    timerPeriod(twelveMinutes, display)
+
 }
 
 //Función antigua timer
@@ -101,7 +106,7 @@ function timerPeriod(duration, display) {
         if (periodCounter > 4) {
             display.textContent = "END"
         }
-    }, 10);
+    }, 1000);
 }
 
 window.onload = function () {
@@ -181,11 +186,13 @@ function ayaya() {
         fondo.style.backgroundImage = 'url("SlamDunk.jpg")';
         ayayaButton.textContent = "Normie";
         anime = true;
+        musica.play();
     } else if (anime == true) {
         fondo.style.backgroundImage = "none"
         fondo.style.backgroundColor = "#1B244A";
         ayayaButton.textContent = "AYAYA";
         anime = false
+        musica.pause()
     }
 }
 
