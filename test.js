@@ -5,8 +5,9 @@ let bordeHomBool = false
 let bodeGuestBool = false
 let periodCounter = 1
 let anime = false
+let slam = false
+let haikyuu = false
 let timer;
-
 
 let homCount = document.getElementById("count-hom")
 let guestCount = document.getElementById("count-guest")
@@ -17,14 +18,16 @@ let secondPeriodButton = document.getElementById("period-2")
 let thirdPeriodButton = document.getElementById("period-3")
 let fourthPeriodButton = document.getElementById("period-4")
 let ayayaButton = document.getElementById("ayaya-button")
-let musica = new Audio("SlamDunkAudio.mp3")
-musica.loop = "true"
+let musicaSlam = new Audio("media/SlamDunkAudio.mp3")
+let musicaHaikyuu = new Audio("media/HaikyuuAudio.mp3")
+musicaSlam.loop = "true"
+musicaHaikyuu.loop = "true"
 
 timeString.textContent = time
 
 console.log(homCount)
 
-
+//Funciones para añadir puntos a cada equipo
 
 function plus1(equipo) {
 
@@ -56,7 +59,7 @@ function plus3(equipo) {
     guestCount.textContent = guestScore;
 }
 
-//Botón para iniciar un nuevo partido
+//Función para comenzar un nuevo juego
 
 function restart() {
     homScore = 0
@@ -71,20 +74,8 @@ function restart() {
 
 }
 
-//Función antigua timer
 
-/* let intervalo = setInterval(function timer() {
-    time -= 1
-    timeString.textContent = time
-
-    if (time <= 0) {
-        timeString.textContent = "00"
-    }
-
-}, 1000);
-*/
-
-//Función timer con minutos y segundos
+//Función timer
 
 function timerPeriod(duration, display) {
     timer = duration;
@@ -117,7 +108,8 @@ window.onload = function () {
     timerPeriod(twelveMinutes, display);
 };
 
-//Funciones para resaltar ganador
+//Funciones para cambiar el color de los bordes de los equipos y el timer
+
 function highlightHom() {
     homCount.style.borderColor = '#ffff00'
     guestCount.style.borderColor = '#1B244A'
@@ -146,7 +138,7 @@ let highlightInterval = setInterval(function intervalTimer() {
     }
 }, 100)
 
-//Función para resaltar el período actual del partido
+//Funciones para cambiar el color del borde de los períodos
 
 function highlightPeriod1() {
     firstPeriodButton.style.borderColor = '#ffff00'
@@ -183,20 +175,35 @@ function highlightEndMatch() {
     fourthPeriodButton.style.borderColor = '#9AABD8'
 }
 
+//Función para cambiar el fondo y reproducir música
+
 function ayaya() {
-    if (anime == false) {
-        fondo.style.backgroundImage = 'url("SlamDunk.jpg")';
-        ayayaButton.textContent = "Normie";
+    if (anime == false && slam == true) {
+        fondo.style.backgroundImage = 'url("media/SlamDunk.jpg")';
+        ayayaButton.textContent = "AYAYA!!";
         anime = true;
-        musica.play();
-    } else if (anime == true) {
-        fondo.style.backgroundImage = "none"
+        haikyuu = true;
+        musicaSlam.play();
+    } else if (anime == true && haikyuu == true) {
+        fondo.style.backgroundImage = 'url("media/Haikyuu.jpg'
+        ayayaButton.textContent = "Normie 🥱";
+        anime = false
+        haikyuu = false
+        musicaSlam.pause();
+        musicaHaikyuu.play();
+        slam = false
+    } else if (anime === false && haikyuu === false){
         fondo.style.backgroundColor = "#1B244A";
+        fondo.style.backgroundImage = "none";
+        musicaHaikyuu.pause();
         ayayaButton.textContent = "AYAYA";
         anime = false
-        musica.pause()
+        musicaSlam.pause();
+        slam = true
     }
 }
+
+//Función para resaltar el período actual
 
 let highlightPeriod = setInterval(function intervalPeriod() {
     if (periodCounter == 1) {
