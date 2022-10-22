@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Scoreboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="scoreboard.css">
+
+</head>
+
+<body>
+    
+    /*
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="home.html">Skrame</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-current="page" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="scoreboard.html">Scoreboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="password.html">Password Generator</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div id="scoreboard">
+        <div class="container">
+            <div class="item-home">
+                <h3>HOME</h3>
+                <p id="count-hom">0</p>
+            </div>
+            <div class="item-timer">
+                <h3>TIMER</h3>
+                <p id="timer">12:00</p>
+            </div>
+            <div class="item-guest">
+                <h3>GUEST</h3>
+                <p id="count-guest">0</p>
+            </div>
+        </div>
+        <div class="container-button">
+            <div class="item-a">
+                <button onclick="plus1('hom')">+1</button>
+                <button onclick="plus2('hom')">+2</button>
+                <button onclick="plus3('hom')">+3</button>
+            </div>
+            <div class="item-period">
+                <button id="period-1">1</button>
+                <button id="period-2">2</button>
+                <button id="period-3">3</button>
+                <button id="period-4">4</button>
+            </div>
+            <div class="item-b">
+                <button onclick="plus1('guest')">+1</button>
+                <button onclick="plus2('guest')">+2</button>
+                <button onclick="plus3('guest')">+3</button>
+            </div>
+        </div>
+        <div class="item-c">
+            <button id="restart-button" onclick="restart()">Restart</button>
+        </div>
+        <div class="item-c">
+            <button id="ayaya-button" onclick="ayaya()">AYAYA</button>
+        </div>
+        <script src="scoreboard.js"></script>
+    </div>
+</body>
+
+</html>

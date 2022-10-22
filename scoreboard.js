@@ -12,7 +12,7 @@ let timer;
 let homCount = document.getElementById("count-hom")
 let guestCount = document.getElementById("count-guest")
 let timeString = document.getElementById("timer")
-let fondo = document.getElementById("fondo")
+let scoreboard = document.getElementById("scoreboard")
 let firstPeriodButton = document.getElementById("period-1")
 let secondPeriodButton = document.getElementById("period-2")
 let thirdPeriodButton = document.getElementById("period-3")
@@ -179,13 +179,13 @@ function highlightEndMatch() {
 
 function ayaya() {
     if (anime == false && slam == true) {
-        fondo.style.backgroundImage = 'url("media/SlamDunk.jpg")';
+        scoreboard.style.backgroundImage = 'url("media/SlamDunk.jpg")';
         ayayaButton.textContent = "AYAYA!!";
         anime = true;
         haikyuu = true;
         musicaSlam.play();
     } else if (anime == true && haikyuu == true) {
-        fondo.style.backgroundImage = 'url("media/Haikyuu.jpg'
+        scoreboard.style.backgroundImage = 'url("media/Haikyuu.jpg'
         ayayaButton.textContent = "Normie 🥱";
         anime = false
         haikyuu = false
@@ -193,8 +193,8 @@ function ayaya() {
         musicaHaikyuu.play();
         slam = false
     } else if (anime === false && haikyuu === false){
-        fondo.style.backgroundColor = "#1B244A";
-        fondo.style.backgroundImage = "none";
+        scoreboard.style.backgroundColor = "#1B244A";
+        scoreboard.style.backgroundImage = "none";
         musicaHaikyuu.pause();
         ayayaButton.textContent = "AYAYA";
         anime = false
