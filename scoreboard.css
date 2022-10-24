@@ -32,7 +32,7 @@ body {
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid #ffff00;
-    
+
 }
 
 #timer {
@@ -52,7 +52,7 @@ body {
 
 
 .item-home {
-    justify-content: flex-start;
+    justify-content: left;
 }
 
 .item-timer {
@@ -60,7 +60,7 @@ body {
 }
 
 .item-guest {
-    justify-content: flex-end;
+    justify-content: right;
 }
 
 p {
@@ -70,7 +70,6 @@ p {
     top: 125px;
     background: #080001;
     border-radius: 5px;
-    text-align: center;
     font-family: 'Cursed Timer ULiL';
     color: red;
     font-size: 90px;
@@ -81,8 +80,6 @@ p {
 button {
     width: 45px;
     height: 45px;
-    left: 82px;
-    top: 271px;
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid #9AABD8;
@@ -95,13 +92,11 @@ button {
     font-family: 'Cursed Timer ULiL';
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
-    gap: 8%
 }
 
 .item-a {
-    justify-content: left;
+    justify-content: flex-start;
 
 }
 

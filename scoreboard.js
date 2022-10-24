@@ -70,7 +70,7 @@ function restart() {
     timeString.textContent = time
     periodCounter = 1
     timer = 60 * 12;
-    
+
 
 }
 
@@ -185,14 +185,14 @@ function ayaya() {
         haikyuu = true;
         musicaSlam.play();
     } else if (anime == true && haikyuu == true) {
-        scoreboard.style.backgroundImage = 'url("media/Haikyuu.jpg'
+        scoreboard.style.backgroundImage = 'url("media/Haikyuu.jpg';
         ayayaButton.textContent = "Normie 🥱";
         anime = false
         haikyuu = false
         musicaSlam.pause();
         musicaHaikyuu.play();
         slam = false
-    } else if (anime === false && haikyuu === false){
+    } else if (anime === false && haikyuu === false) {
         scoreboard.style.backgroundColor = "#1B244A";
         scoreboard.style.backgroundImage = "none";
         musicaHaikyuu.pause();
