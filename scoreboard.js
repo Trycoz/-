@@ -5,14 +5,14 @@ let bordeHomBool = false
 let bodeGuestBool = false
 let periodCounter = 1
 let anime = false
-let slam = false
+let slam = true
 let haikyuu = false
 let timer;
 
 let homCount = document.getElementById("count-hom")
 let guestCount = document.getElementById("count-guest")
 let timeString = document.getElementById("timer")
-let scoreboard = document.getElementById("scoreboard")
+let scoreboard = document.getElementById("TODO")
 let firstPeriodButton = document.getElementById("period-1")
 let secondPeriodButton = document.getElementById("period-2")
 let thirdPeriodButton = document.getElementById("period-3")
@@ -20,6 +20,7 @@ let fourthPeriodButton = document.getElementById("period-4")
 let ayayaButton = document.getElementById("ayaya-button")
 let musicaSlam = new Audio("media/SlamDunkAudio.mp3")
 let musicaHaikyuu = new Audio("media/HaikyuuAudio.mp3")
+let container = document.getElementById("container")
 musicaSlam.loop = "true"
 musicaHaikyuu.loop = "true"
 
@@ -187,6 +188,7 @@ function ayaya() {
     } else if (anime == true && haikyuu == true) {
         scoreboard.style.backgroundImage = 'url("media/Haikyuu.jpg';
         ayayaButton.textContent = "Normie 🥱";
+        container.style.color = "#ffffff";
         anime = false
         haikyuu = false
         musicaSlam.pause();
@@ -194,6 +196,7 @@ function ayaya() {
         slam = false
     } else if (anime === false && haikyuu === false) {
         scoreboard.style.backgroundColor = "#1B244A";
+        container.style.color = "#ffffff";
         scoreboard.style.backgroundImage = "none";
         musicaHaikyuu.pause();
         ayayaButton.textContent = "AYAYA";
@@ -217,4 +220,24 @@ let highlightPeriod = setInterval(function intervalPeriod() {
     } else {
         highlightEndMatch()
     }
+    changeWidth()
 }, 100)
+
+//Función para cambiar el tamaño de los cuadros
+
+function changeWidth() {
+
+    if (homCount.textContent > 0 && homCount.textContent <= 99) {
+        homCount.style.width = "150px"
+        console.log("Buenos días Mandy")
+        console.log(homCount.textContent)
+    } else if (homCount.textContent > 99) {
+        console.log("Chao Mandy")
+        homCount.style.width = "200px"
+    }
+    if (guestCount.textContent > 0 && guestCount.textContent <= 99) {
+        guestCount.style.width = "150px"
+    } else if (guestCount.textContent > 99) {
+        guestCount.style.width = "200px"
+    }
+}

@@ -17,10 +17,17 @@ body {
 
 }
 
+#navbar {
+    color: white !important;
+    background-color: rgb(7, 6, 45);
+}
+
 #scoreboard {
     background-size: cover;
     background-repeat: no-repeat;
+    margin-top: 5%;
 }
+
 
 .container {
     /*display: flex;
@@ -28,30 +35,27 @@ body {
     text-align: center;*/
     font-family: 'Verdana';
     color: white;
-    margin-top: 5%;
 }
 
 #count-hom {
-    box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid #ffff00;
-
+    display: inline-block;
+    width: 150px;
 }
 
 #timer {
-    box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid #ffff00;
-    width: 300px;
+    display: inline-block;
 }
 
 #count-guest {
-    box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid #ffff00;
+    display: inline-block;
+    width: 150px;
 }
-
-
 
 
 /*.item-home {
@@ -67,8 +71,17 @@ body {
 }*/
 
 p {
-    width: 150px;
-    height: 120px;
+    background: #080001;
+    font-family: 'Cursed Timer ULiL';
+    color: red;
+    font-size: 90px;
+}
+
+
+
+/* p {
+    width: 15vw;
+    height: 8vw;
     left: 82px;
     top: 125px;
     background: #080001;
@@ -78,7 +91,7 @@ p {
     font-size: 90px;
     margin-block-start: 0%;
     margin-block-end: 5%;
-}
+} */
 
 button {
     width: 45px;
@@ -146,6 +159,7 @@ button {
     height: 45px;
     font-weight: bold;
     font-family: 'Verdana';
+    margin-top: 3%;
 }
 
 #ayaya-button {
@@ -154,4 +168,5 @@ button {
     height: 45px;
     font-weight: bold;
     font-family: 'Verdana';
+    margin-top: 2%;
 }
