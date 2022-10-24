@@ -5,6 +5,9 @@
     src: local('Cursed Timer ULiL'), url('https://fonts.cdnfonts.com/s/40642/CursedTimerUlil-Aznm.woff') format('woff');
 }
 
+/* TODO LO COMENTADO ESTABA DE MAS (CREO),, TAMBIEN BORRE ALGUNAS COSAS*/
+/*NO SE COMO ALINEAR LOS BOTONES PARA SUBIR EL SCORE CON EL SCORE MISMO
+SEGUN YO EL PROBLEMA ES EL WIDTH DEL TIMER*/
 body {
     margin: 0;
     background-color: #1B244A;
@@ -20,9 +23,9 @@ body {
 }
 
 .container {
-    display: flex;
+    /*display: flex;
     justify-content: space-around;
-    text-align: center;
+    text-align: center;*/
     font-family: 'Verdana';
     color: white;
     margin-top: 5%;
@@ -51,7 +54,7 @@ body {
 
 
 
-.item-home {
+/*.item-home {
     justify-content: left;
 }
 
@@ -61,7 +64,7 @@ body {
 
 .item-guest {
     justify-content: right;
-}
+}*/
 
 p {
     width: 150px;
@@ -90,12 +93,12 @@ button {
 .container-button {
 
     font-family: 'Cursed Timer ULiL';
-    display: flex;
+    /*display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-around;*/
 }
 
-.item-a {
+/*.item-a {
     justify-content: flex-start;
 
 }
@@ -111,7 +114,7 @@ button {
 .item-c {
     display: flex;
     justify-content: center;
-}
+}*/
 
 #period-1 {
     box-sizing: border-box;
@@ -143,7 +146,6 @@ button {
     height: 45px;
     font-weight: bold;
     font-family: 'Verdana';
-    margin-top: 3%;
 }
 
 #ayaya-button {
@@ -152,5 +154,4 @@ button {
     height: 45px;
     font-weight: bold;
     font-family: 'Verdana';
-    margin: 2%;
 }
