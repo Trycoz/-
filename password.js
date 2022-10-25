@@ -5,7 +5,11 @@ let passwordContainer1 = document.getElementById("passwordContainer1")
 let passwordContainer2 = document.getElementById("passwordContainer2")
 let passwordLengthValue = document.getElementById("customRange")
 let clipboard = document.getElementById("clipboard").style.display = "none";
+let clipboard2 = document.getElementById("clipboard2").style.display = "none";
+let card1 = document.getElementById("passwordCard1").style.display = "none";
+let card2 = document.getElementById("passwordCard2").style.display = "none";
 
+//Funciones para generar las contraseñas al azar
 
 function getRandomNumber() {
     let number = Math.floor(Math.random() * (characters.length))
@@ -21,7 +25,6 @@ function getRandomCharacter() {
 function getRandomPasswords() {
     let passwords = []
     let passwordLength = passwordLengthValue.value
-    console.log("avers")
     for (let j = 0; j < 2; j++) {
         let password = ""
         for (let i = 0; i < passwordLength; i++) {
@@ -34,24 +37,34 @@ function getRandomPasswords() {
 
 }
 
+//Función para que el botón muestre las contraseñas
+
 function showPasswords() {
     let passwordsToShow = getRandomPasswords()
     passwordContainer1.textContent = passwordsToShow[0]
     passwordContainer2.textContent = passwordsToShow[1]
     clipboard = document.getElementById("clipboard").style.display = "block";
+    clipboard2 = document.getElementById("clipboard2").style.display = "block";
+    card1 = document.getElementById("passwordCard1").style.display = "block";
+    card2 = document.getElementById("passwordCard2").style.display = "block";
 }
 
-
+//Función que actualiza el texto que indica la longitud de la contraseña
 
 function updateTextInput(val) {
     document.getElementById('passwordLength').textContent = "Password length"
     document.getElementById('passwordLength').textContent += ": " + val;
 }
 
+//Función para copiar la contraseñas al clipboard
+
 function copyOnClipboard() {
-
     navigator.clipboard.writeText(passwordContainer1.textContent);
-
-    // Alert the copied text
     alert("Copied the text: " + passwordContainer1.textContent);
 }
+
+function copyOnClipboard2() {
+    navigator.clipboard.writeText(passwordContainer2.textContent);
+    alert("Copied the text: " + passwordContainer2.textContent);
+}
+
