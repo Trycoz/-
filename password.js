@@ -1,14 +1,17 @@
 let characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?",
     "/"];
 let count = 0
-let passwordContainer1 = document.getElementById("passwordContainer1")
-let passwordContainer2 = document.getElementById("passwordContainer2")
-let passwordLengthValue = document.getElementById("customRange")
+let passwordContainer1 = document.getElementById("passwordContainer1");
+let passwordContainer2 = document.getElementById("passwordContainer2");
+let passwordLengthValue = document.getElementById("customRange");
 let clipboard = document.getElementById("clipboard").style.display = "none";
 let clipboard2 = document.getElementById("clipboard2").style.display = "none";
 let card1 = document.getElementById("passwordCard1").style.display = "none";
 let card2 = document.getElementById("passwordCard2").style.display = "none";
-let passwordSecurity = document.getElementById("passwordSecurity")
+let passwordSecurity = document.getElementById("passwordSecurity");
+
+let sliderColor = document.querySelector('input[name=rangeInput]::-webkit-slider-thumb');
+
 
 //Funciones para generar las contraseñas al azar
 
@@ -70,18 +73,23 @@ function copyOnClipboard2() {
     alert("Copied the text: " + passwordContainer2.textContent);
 }
 
-//Función para cambiar color seguridad contraseña
+//Función para cambiar color seguridad contraseña y thumb
 
 function passwordSecurityText(){
     let passwordLength = passwordLengthValue.value
+    var thumbColor = document.querySelector('.form-range');
     if (passwordLength <= 7){
         passwordSecurity.textContent = "Weak"
         passwordSecurity.style.color = "#ff0000"
+        thumbColor.style.setProperty("--SliderColor", "hsl(0, 100%, 50%)")
+
     }else if (passwordLength <= 11){
         passwordSecurity.textContent = "Medium"
         passwordSecurity.style.color = "#ffa200"
+        thumbColor.style.setProperty("--SliderColor", "hsl(38, 100%, 50%)")
     }else{
         passwordSecurity.textContent = "Strong"
         passwordSecurity.style.color = "#51ff00"
+        thumbColor.style.setProperty("--SliderColor", "hsl(101, 100%, 50%)")
     }
 }
