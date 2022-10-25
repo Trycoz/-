@@ -75,21 +75,32 @@ function copyOnClipboard2() {
 
 //Función para cambiar color seguridad contraseña y thumb
 
-function passwordSecurityText(){
+function passwordSecurityText() {
     let passwordLength = passwordLengthValue.value
     var thumbColor = document.querySelector('.form-range');
-    if (passwordLength <= 7){
+    if (passwordLength <= 7) {
         passwordSecurity.textContent = "Weak"
         passwordSecurity.style.color = "#ff0000"
         thumbColor.style.setProperty("--SliderColor", "hsl(0, 100%, 50%)")
 
-    }else if (passwordLength <= 11){
+    } else if (passwordLength <= 11) {
         passwordSecurity.textContent = "Medium"
         passwordSecurity.style.color = "#ffa200"
         thumbColor.style.setProperty("--SliderColor", "hsl(38, 100%, 50%)")
-    }else{
+    } else {
         passwordSecurity.textContent = "Strong"
         passwordSecurity.style.color = "#51ff00"
         thumbColor.style.setProperty("--SliderColor", "hsl(101, 100%, 50%)")
     }
+}
+
+//Función para sidepanel
+function openNav() {
+    document.getElementById("mySidepanel").style.width = "250px";
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+    console.log("teste")
+    document.getElementById("mySidepanel").style.width = "0";
 }
