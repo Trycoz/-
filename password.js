@@ -8,6 +8,7 @@ let clipboard = document.getElementById("clipboard").style.display = "none";
 let clipboard2 = document.getElementById("clipboard2").style.display = "none";
 let card1 = document.getElementById("passwordCard1").style.display = "none";
 let card2 = document.getElementById("passwordCard2").style.display = "none";
+let passwordSecurity = document.getElementById("passwordSecurity")
 
 //Funciones para generar las contraseñas al azar
 
@@ -54,6 +55,7 @@ function showPasswords() {
 function updateTextInput(val) {
     document.getElementById('passwordLength').textContent = "Password length"
     document.getElementById('passwordLength').textContent += ": " + val;
+    passwordSecurityText();
 }
 
 //Función para copiar la contraseñas al clipboard
@@ -68,3 +70,18 @@ function copyOnClipboard2() {
     alert("Copied the text: " + passwordContainer2.textContent);
 }
 
+//Función para cambiar color seguridad contraseña
+
+function passwordSecurityText(){
+    let passwordLength = passwordLengthValue.value
+    if (passwordLength <= 7){
+        passwordSecurity.textContent = "Weak"
+        passwordSecurity.style.color = "#ff0000"
+    }else if (passwordLength <= 11){
+        passwordSecurity.textContent = "Medium"
+        passwordSecurity.style.color = "#ffa200"
+    }else{
+        passwordSecurity.textContent = "Strong"
+        passwordSecurity.style.color = "#51ff00"
+    }
+}
