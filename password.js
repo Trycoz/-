@@ -1,5 +1,9 @@
 let characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?",
     "/"];
+let charactersWOsymbols = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+let charactersWOnumbers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?",
+    "/"];
+let charactersWOsymbolsAndNumbers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 let count = 0
 let passwordContainer1 = document.getElementById("passwordContainer1");
 let passwordContainer2 = document.getElementById("passwordContainer2");
@@ -9,30 +13,32 @@ let clipboard2 = document.getElementById("clipboard2").style.display = "none";
 let card1 = document.getElementById("passwordCard1").style.display = "none";
 let card2 = document.getElementById("passwordCard2").style.display = "none";
 let passwordSecurity = document.getElementById("passwordSecurity");
+let toggleSymbol = document.getElementById("checkbox-symbols").checked;
+let toggleNumber = document.getElementById("checkbox-numbers").checked;
 
 let sliderColor = document.querySelector('input[name=rangeInput]::-webkit-slider-thumb');
 
 
 //Funciones para generar las contraseñas al azar
 
-function getRandomNumber() {
-    let number = Math.floor(Math.random() * (characters.length))
+function getRandomNumber(arrayToUse) {
+    let number = Math.floor(Math.random() * (arrayToUse.length))
     return number
 }
 
-function getRandomCharacter() {
-    let index = getRandomNumber()
-    let character = characters[index]
+function getRandomCharacter(arrayToUse) {
+    let index = getRandomNumber(arrayToUse)
+    let character = arrayToUse[index]
     return character
 }
 
-function getRandomPasswords() {
+function getRandomPasswords(arrayToUse) {
     let passwords = []
     let passwordLength = passwordLengthValue.value
     for (let j = 0; j < 2; j++) {
         let password = ""
         for (let i = 0; i < passwordLength; i++) {
-            let newCharacter = getRandomCharacter();
+            let newCharacter = getRandomCharacter(arrayToUse);
             password += newCharacter;
         }
         passwords.push(password)
@@ -41,10 +47,25 @@ function getRandomPasswords() {
 
 }
 
+function getArray() {
+    let arrayToUse = []
+    if (document.getElementById("checkbox-symbols").checked === true && document.getElementById("checkbox-numbers").checked === true) {
+        arrayToUse = characters
+    } else if (document.getElementById("checkbox-symbols").checked === true && document.getElementById("checkbox-numbers").checked === false) {
+        arrayToUse = charactersWOnumbers
+    } else if (document.getElementById("checkbox-symbols").checked === false && document.getElementById("checkbox-numbers").checked === true) {
+        arrayToUse = charactersWOsymbols
+    } else {
+        arrayToUse = charactersWOsymbolsAndNumbers
+    }
+    return arrayToUse
+}
+
 //Función para que el botón muestre las contraseñas
 
 function showPasswords() {
-    let passwordsToShow = getRandomPasswords()
+    let arrayToUse = getArray()
+    let passwordsToShow = getRandomPasswords(arrayToUse)
     passwordContainer1.textContent = passwordsToShow[0]
     passwordContainer2.textContent = passwordsToShow[1]
     clipboard = document.getElementById("clipboard").style.display = "block";
@@ -94,13 +115,16 @@ function passwordSecurityText() {
     }
 }
 
-//Función para sidepanel
-function openNav() {
-    document.getElementById("mySidepanel").style.width = "250px";
-}
+////Función para sidepanel
+//function openNav() {
+//    document.getElementById("mySidepanel").style.width = "250px";
+//}
+//
+///* Set the width of the sidebar to 0 (hide it) */
+//function closeNav() {
+//    console.log("teste")
+//    document.getElementById("mySidepanel").style.width = "0";
+//}
 
-/* Set the width of the sidebar to 0 (hide it) */
-function closeNav() {
-    console.log("teste")
-    document.getElementById("mySidepanel").style.width = "0";
-}
+
+
