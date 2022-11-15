@@ -14,7 +14,6 @@ function convertUnit(value) {
 }
 
 function showUnits() {
-
     let inputValue = document.getElementById("unitToConvert").value
     const resultsObject = convertUnit(inputValue)
     console.log(resultsObject)
@@ -37,8 +36,27 @@ function showUnits() {
         `
     } else {
         document.getElementById("unitToConvert").value = 0
+        errorBtn()
         showUnits()
     }
 
 }
 
+function errorBtn() {
+    const convertButton = document.getElementById("convertButton")
+    convertButton.style.backgroundColor = "red"
+    convertButton.style.color = "white"
+    convertButton.textContent = "Error"
+    convertButton.disabled = true
+    setTimeout(normalBtn, 2000)
+
+
+}
+
+function normalBtn() {
+    const convertButton = document.getElementById("convertButton")
+    convertButton.style.backgroundColor = "white"
+    convertButton.style.color = "black"
+    convertButton.textContent = "Convert"
+    convertButton.disabled = false
+}
