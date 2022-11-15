@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit converter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="converter.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Skrame</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="scoreboard.html">Scoreboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="password.html">Password Generator</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Unit converter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container" id="carta">
+        <div class="card text-center" id="unitConverterCard">
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <p class="card-title">Metric/Imperial Unit Conversion</p>
+                        <input label="unitToConvert" placeholder="20" type="text" id="unitToConvert"> 
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <button id="convertButton">Convert</button>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col" id="cardsConvertions">
+                        <div class="cardContent">
+                        <h5>Length (Meter/Feet)</h5>
+                        <h6>20 meters = 65.616 feet | 20 feet = 6.096 meters</h6>
+                        </div>
+                        <div class="cardContent">
+                        <h5>Volume (Liters/Gallons)</h5>
+                        <h6>20 liters = 5.284 gallons | 20 gallons = 75.708 liters</h6>
+                        </div>
+                        <div class="cardContent">
+                        <h5>Mass (Kilograms/Pounds)</h5>
+                        <h6>20 kilos = 44.092 pounds | 20 pounds = 9.072 kilos</h6>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</body>
+</html>
